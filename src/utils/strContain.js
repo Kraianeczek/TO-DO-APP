@@ -1,14 +1,6 @@
-import { useSelector } from "react-redux";
-
-const searchString = useSelector(state => state.cards.title);
-
 const changer = (a, b) => {
-    a.toLowerCase().includes(b.toLowerCase())
+   const x =  a.toLowerCase().includes(b.toLowerCase());
+   return x;
 }
-
-
-// const changer = (change.cards.title, change.searchString) => {
-//     cards.title.toLowerCase().includes(searchString.toLowerCase()
-// }
 
 export default changer;

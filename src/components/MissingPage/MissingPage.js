@@ -1,12 +1,12 @@
 import PageTitle from '../PageTitle/PageTitle';
 
-const About = () => {
+const MissingPage = () => {
     return (
             <div>
-                <PageTitle>ABOUT</PageTitle>
+                <PageTitle>404 NOT FOUND</PageTitle>
                 <p>Lorem ipsum</p>
             </div>
     )
 }
 
-export default About;
+export default MissingPage;

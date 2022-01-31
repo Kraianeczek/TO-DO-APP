@@ -9,6 +9,9 @@ export const getFilteredCards = ({ cards, searchString }, columnId) => cards
 
 export const getAllColumns = () => {return initialState.columns};
 
+export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId)
+
+
 // action creators
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 

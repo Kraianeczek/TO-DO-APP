@@ -1,16 +1,14 @@
 import { createStore } from 'redux';
+import initialState from './initialState';
+
 const reducer = (state, action) => {
   return state;
 };
 
-const initialState = {
-  columns: []
-};
-
 const store = createStore(
-  reducer,            
+  reducer,
   initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()  // info dla reduxa, że korzystamy z redux dev tools w przeglądarce oraz ma jej przekazywać info
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default store;

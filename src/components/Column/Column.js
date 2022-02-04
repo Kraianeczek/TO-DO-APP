@@ -5,7 +5,10 @@ import styles from './Column.module.scss'
 
 const Column = (props) => {
 
-    const cards = useSelector(state => state.cards).filter(card => card.columnId === props.id)
+    const searchString = useSelector(state => state.searchString);
+    console.log('ss', searchString);
+    const cards = useSelector(state => state.cards).filter(card => card.columnId === props.id && card.title.toLowerCase().includes(searchString.toLowerCase()))
+
     return (
         <article className={styles.column}>
             <h1 className={styles.title}><span className={styles.icon + ' fa fa-' + props.icon}></span>{props.title}</h1>

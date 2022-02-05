@@ -1,12 +1,17 @@
 import { createStore } from 'redux';
 import shortid from 'shortid';
+import strContain from '../utils/strContain';
 import initialState from './initialState';
+
+//selectors
+export const getFilteredCards = ({cards, searchString}, columnId) => cards
+  .filter(card => card.columnId === columnId && strContain(card.title, searchString));
 
 const reducer = (state, action) => {
   switch (action.type) {
     case'ADD_COLUMN': return { ...state, columns: [...state.columns, {...action.payload, id: shortid() }]};
     case'ADD_CARD': return { ...state, cards: [...state.cards, {...action.payload, id: shortid() }]};
-    case 'FILTER': return { ...state, searchString: action.payload};
+    case 'FILTER': return { ...state, searchString: action.payload.title};
     default:
       return state;
   }

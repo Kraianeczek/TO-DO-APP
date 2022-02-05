@@ -6,6 +6,8 @@ import initialState from './initialState';
 //selectors
 export const getFilteredCards = ({cards, searchString}, columnId) => cards
   .filter(card => card.columnId === columnId && strContain(card.title, searchString));
+export const getAllColumns = (state => state.columns);
+
 
 const reducer = (state, action) => {
   switch (action.type) {

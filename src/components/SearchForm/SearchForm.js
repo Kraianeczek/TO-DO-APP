@@ -3,6 +3,7 @@ import Button from '../Button/Button.js';
 import TextInput from '../TextInput/TextInput.js';
 import styles from './SearchForm.module.scss';
 import { useDispatch } from 'react-redux';
+import { filter } from '../../redux/store.js';
 
 const SearchForm = () => {
 
@@ -11,7 +12,7 @@ const SearchForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log('titsss', title)
-        dispatch({ type: 'FILTER', payload: {title}})
+        dispatch(filter({title}));
         setTitle('');
         console.log('tit', title)
     };

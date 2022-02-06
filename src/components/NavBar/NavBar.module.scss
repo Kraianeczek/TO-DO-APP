@@ -16,4 +16,9 @@
     display: inline;
     margin: 20px;
     font-size: 24px;
+    text-decoration: none;
+}
+
+.linkActive {
+    color: $color-warning;
 }

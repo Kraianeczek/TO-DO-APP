@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../Button/Button.js';
 import TextInput from '../TextInput/TextInput.js';
 import styles from './SearchForm.module.scss';
@@ -15,8 +15,12 @@ const SearchForm = () => {
         console.log('titsss', title)
         dispatch(filter({title}));
         console.log('tit', title);
-        setTitle(searchString)
+        setTitle(title);
     };
+
+    useEffect(() => {
+        setTitle(searchString)
+    }, [searchString])
 
     return (
         <form className={styles.searchForm} onSubmit={handleSubmit}>

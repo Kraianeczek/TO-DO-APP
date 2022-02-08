@@ -1,6 +1,6 @@
 @import '../../styles/settings.scss';
 
-.card {
+.title {
     position: relative;
     background: $color-light;
     border: 1px solid lighten($color-dark, 60%);
@@ -9,5 +9,12 @@
     border-radius: $radius;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: bold;
+}
+
+.button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { toggleCardFavorite } from '../../redux/store';
+import { toggleCardFavorite } from '../../redux/cardsRedux.js';
 import styles from './Card.module.scss';
 
 const Card = props => {
@@ -11,15 +11,24 @@ const Card = props => {
         dispatch(toggleCardFavorite(props.id))
     }
 
+    const trashSubmit = e => {
+        e.preventDefault();
+    }
+
     const classFavorite = (props.isFavorite ? styles.isFavorite : styles.isNotFavorite)
     const klass = (props.isFavorite ? 'fa-star' : 'fa-star-o')
 
     return (
         <div className={styles.card}>
             <li className={styles.title}>{props.title}
+            <div>
                 <button className={styles.button} onClick={handleSubmit}>
                     <span className={styles.icon + ' fa ' + klass + ' ' + classFavorite}></span>
                 </button>
+                <button className={styles.button} onClick={trashSubmit}>
+                    <span className={styles.trash + ' fa fa-trash '}></span>
+                </button>
+            </div>
             </li>
         </div>
     );

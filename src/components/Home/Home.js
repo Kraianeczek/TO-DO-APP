@@ -4,11 +4,11 @@ import Lists from "../Lists/Lists"
 
 const Home = () => {
     return (
-        <container>
+        <div>
             <Hero />
             <Lists />
             <ListForm />
-        </container>
+        </div>
     )
 }
 

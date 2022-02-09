@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { toggleCardFavorite } from '../../redux/cardsRedux.js';
+import { removeCard, toggleCardFavorite } from '../../redux/cardsRedux.js';
 import styles from './Card.module.scss';
 
 const Card = props => {
@@ -13,6 +13,7 @@ const Card = props => {
 
     const trashSubmit = e => {
         e.preventDefault();
+        dispatch(removeCard(props.id));
     }
 
     const classFavorite = (props.isFavorite ? styles.isFavorite : styles.isNotFavorite)

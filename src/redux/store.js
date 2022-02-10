@@ -8,7 +8,6 @@ import searchStringReducer from './searchStringRedux';
 //selectors
 
 // action creators
-export const filter = payload => ({ type: 'FILTER', payload });
 
 const subreducers = {
   lists: listsReducer,

@@ -1,14 +1,14 @@
 
 const createActionName = actionName => `app/lists/${actionName}`;
-const UPDATE_SEARCHSTRING = createActionName('UPDATE_SEARCHSTRING');
+const FILTER = createActionName('FILTER');
 
 // action creators
-export const filter = payload => ({ type: 'FILTER', payload });
+export const filter = payload => ({ type: FILTER, payload });
 
 const searchStringReducer = (statePart = '', action) => {
     switch(action.type) {
-      case UPDATE_SEARCHSTRING:
-        return action.payload
+      case FILTER:
+        return action.payload.title
       default:
         return statePart;
     }
